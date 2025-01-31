@@ -1,0 +1,33 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+label#countlabel {
+    display: block;
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 10em;
+}
+
+div#btnContaneir {
+    display: flex;
+    flex-flow: row nowrap;
+
+    justify-content: center;
+}
+
+.btn {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    color: white;
+    background-color: rgb(88, 158, 250);
+    border-radius: 5px;
+    cursor: pointer;
+    transition:  background-color 0.25s;
+}
+
+.btn:hover{
+    background-color: rgb(32, 103, 255);;
+}
