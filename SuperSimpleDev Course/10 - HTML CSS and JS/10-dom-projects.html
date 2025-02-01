@@ -2,16 +2,47 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif
+        }
+        .js-subscribe-Button {
+            color: white;
+            background-color: black;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+
+        .is-subscribe {
+            background-color: rgb(231, 231, 231);
+            color: black;
+        }
+
+        button#js-calculator {
+            border: none;
+            padding: 12px 15px;
+            color: white;
+            font-size: 15px;
+            background-color: green;
+            cursor: pointer;
+        }
+
+        input#js-input {
+            padding: 10px;
+            font-size: 15px;
+        }
+    </style>
 </head>
 
 <body>
     <p>YouTube Subscribe Button</p>
-    <p><button id="js-subscribe-Button">Subscribe</button></p>
-    <br>
-    
+    <p><button class="js-subscribe-Button">Subscribe</button></p>
+
     <p>Amazon Shipping Calculator</p>
     <p>Orders under $40 = +$10 shipping.</p>
     <p>Orders over $40 = FREE shipping.</p>
@@ -20,14 +51,14 @@
     <p id="js-total"></p>
 
     <script>
-        const subscribeBtn = document.querySelector('#js-subscribe-Button')
+        const subscribeBtn = document.querySelector('.js-subscribe-Button')
         subscribeBtn.onclick = action
 
         const calculateBtn = document.querySelector('#js-calculator')
         calculateBtn.onclick = calculate
 
         const input = document.querySelector('#js-input')
-        input.onkeydown = handleCostKeydown 
+        input.onkeydown = handleCostKeydown
 
         function handleCostKeydown() {
             if (event.key === 'Enter') {
@@ -38,8 +69,10 @@
         function action() {
             if (subscribeBtn.innerText === 'Subscribe') {
                 subscribeBtn.innerText = 'Subscribed'
+                subscribeBtn.classList.add('is-subscribe')
             } else if (subscribeBtn.innerText = 'Subscribed') {
                 subscribeBtn.innerText = 'Subscribe'
+                subscribeBtn.classList.remove('is-subscribe')
             }
         }
 
