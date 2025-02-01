@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <p>YouTube Subscribe Button</p>
+    <p><button id="js-subscribe-Button">Subscribe</button></p>
+    <br>
+
+    <p>Rock Paper Scissors</p>
+    <p><a href="09-rock-paper-scissors.html">Click here</a></p>
+    <br>
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+    <input id="js-input" placeholder="Cost of order" onkeydown="console.log(event.key)">
+    <button id="js-calculator">Calculate</button>
+    <p id="js-total"></p>
+
+    <script>
+        const subscribeBtn = document.querySelector('#js-subscribe-Button')
+        subscribeBtn.onclick = action
+
+        const calculateBtn = document.querySelector('#js-calculator')
+        calculateBtn.onclick = calculate
+
+        const input = document.querySelector('#js-input')
+        input.onkeydown = handleCostKeydown 
+
+        function handleCostKeydown() {
+            if (event.key === 'Enter') {
+                calculate()
+            }
+        }
+
+        function action() {
+            if (subscribeBtn.innerText === 'Subscribe') {
+                subscribeBtn.innerText = 'Subscribed'
+            } else if (subscribeBtn.innerText = 'Subscribed') {
+                subscribeBtn.innerText = 'Subscribe'
+            }
+        }
+
+        function calculate() {
+            let cost = document.querySelector('#js-input').value
+            cost = Number(cost)
+
+            if (cost < 40) {
+                cost += 10
+            }
+
+            document.querySelector('#js-total').innerText = `$${cost}`
+        }
+
+
+    </script>
+</body>
+
+</html>
