@@ -1,11 +1,6 @@
 
-const min = 50
-const max = 100
+let student = false
+let msg  = student ? "Student" : "Not a student"
 
-
-
-
-let randomNum = Math.floor(Math.random()*(max-min)) + min
-
-console.log(randomNum)
+console.log(msg)
 
