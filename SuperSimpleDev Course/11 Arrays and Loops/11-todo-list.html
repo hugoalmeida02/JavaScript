@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List Project</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>Todo List</h1>
-    <input id="name" placeholder="Todo name">
-    
-
-
-
-    
+    <div id="inputdiv">
+        <input id="name" placeholder="Todo name" autocomplete="off">
+        <input type="date" id="date">
+        <button id="addbtn" onclick="addTodo()">Add</button>
+    </div>
+    <div id="container"></div>
 
     <script src="11-todo-list.js"></script>
 </body>
+
 </html>
