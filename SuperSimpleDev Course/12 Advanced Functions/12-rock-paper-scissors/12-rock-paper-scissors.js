@@ -13,6 +13,8 @@ function updateScore() {
     document.querySelector("#js-score").innerText = `Wins: ${score.wins}, Loses ${score.loses}, Ties: ${score.ties}`
 }
 
+document.querySelector("#js-reset").addEventListener('click', reset)
+
 function reset() {
     score.wins = 0
     score.ties = 0
@@ -26,23 +28,48 @@ function reset() {
 }
 
 
+document.querySelector("#js-autoplay").addEventListener('click', autoPlay)
+
+
 let isAutoPlaying = false
 let intervalId
+
 function autoPlay() {
 
     if (!isAutoPlaying) {
-        intervalId = setInterval(function () {
+        intervalId = setInterval(() => {
             const playerMove = pickComputerMove()
             playGame(playerMove)
         }, 1000)
         isAutoPlaying = true
-    }else{
+
+    } else {
         clearInterval(intervalId)
         isAutoPlaying = false
     }
 
 }
 
+document.querySelector("#js-rock").addEventListener('click', () => {
+    playGame('rock')
+})
+document.querySelector("#js-paper").addEventListener('click', () => {
+    playGame('paper')
+})
+document.querySelector("#js-scissors").addEventListener('click', () => {
+    playGame('scissors')
+})
+
+document.body.addEventListener('keydown', (event) => {
+    if (event.key === 'r') {
+        playGame('rock')
+    } else if (event.key === 'p') {
+        playGame('paper')
+    } else if (event.key === 's') {
+        playGame('scissors')
+
+    }
+})
 
 function playGame(playerMove) {
     const computerMove = pickComputerMove();

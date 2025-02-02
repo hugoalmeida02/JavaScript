@@ -10,9 +10,9 @@
 
 <body>
     <h1>Rock Paper Scissor </h1>
-    <button class="btn" onclick="playGame('rock')"><img src="rock-emoji.png" class="emoji"></button>
-    <button class="btn" onclick="playGame('paper')"><img src="paper-emoji.png" class="emoji"></button>
-    <button class="btn" onclick="playGame('scissors')"><img src="scissors-emoji.png" class="emoji"></button>
+    <button class="btn" id="js-rock"><img src="rock-emoji.png" class="emoji"></button>
+    <button class="btn" id="js-paper"><img src="paper-emoji.png" class="emoji"></button>
+    <button class="btn" id="js-scissors"><img src="scissors-emoji.png" class="emoji"></button>
     <p id="js-result"></p>
     <p id="js-game">
         You <img src="rock-emoji.png" class="emoji">
@@ -20,8 +20,8 @@
         Computer
     </p>
     <p id="js-score"></p>
-    <button onclick="reset()" id="js-reset" class="btns">Reset Score</button>
-    <button onclick="autoPlay()" id="js-autoplay" class="btns">Auto Play</button>
+    <button id="js-reset" class="btns">Reset Score</button>
+    <button id="js-autoplay" class="btns">Auto Play</button>
     <script src="12-rock-paper-scissors.js"></script>
 </body>
 
